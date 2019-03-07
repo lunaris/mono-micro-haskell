@@ -1,0 +1,19 @@
+load(
+  "@io_tweag_rules_haskell//haskell:haskell.bzl",
+  "haskell_library",
+)
+
+haskell_library(
+  name = "scotty-forward-headers",
+  src_strip_prefix = "src",
+  srcs = glob(["src/**/*.hs"]),
+  deps = [
+    "@hackage//:base",
+    "@hackage//:case-insensitive",
+    "@hackage//:http-client",
+    "@hackage//:http-types",
+    "@hackage//:scotty",
+    "@hackage//:text",
+  ],
+  visibility = ["//visibility:public"],
+)
